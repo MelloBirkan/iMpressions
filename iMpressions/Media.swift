@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class Book {
   var title: String
   var author: String?
@@ -16,16 +18,18 @@ class Book {
   var dateCompleted: Date
   var summary: String
   var rating: Int?
+  var status: Status
   
   init( // ctrl + M formata assim
     title: String,
     author: String? = nil,
     studio: String? = nil,
-    dateAdded: Date,
-    dateStarted: Date,
-    dateCompleted: Date,
-    summary: String,
-    rating: Int? = nil
+    dateAdded: Date = Date.now,
+    dateStarted: Date = Date.distantPast,
+    dateCompleted: Date = Date.distantFuture,
+    summary: String = "",
+    rating: Int? = nil,
+    status: Status = .onShelf
   ) {
     self.title = title
     self.author = author
@@ -35,6 +39,7 @@ class Book {
     self.dateCompleted = dateCompleted
     self.summary = summary
     self.rating = rating
+    self.status = status
   }
 }
 
