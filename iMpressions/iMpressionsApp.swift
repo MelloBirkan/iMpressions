@@ -12,8 +12,8 @@ import SwiftData
 struct iMpressionsApp: App {
     var body: some Scene {
         WindowGroup {
-            BookListView()
+            MediaListView()
         }
-        .modelContainer(for: Book.self)
+        .modelContainer(for: Media.self)
     }
 }

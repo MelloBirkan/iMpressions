@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BookListView: View {
+struct MediaListView: View {
   @State private var createNewMedia = false
     var body: some View {
       NavigationStack {
@@ -32,5 +32,5 @@ struct BookListView: View {
 }
 
 #Preview {
-    BookListView()
+    MediaListView()
 }

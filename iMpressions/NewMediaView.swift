@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewBookView: View {
+struct NewMediaView: View {
   @Environment(\.modelContext) private var context
   @Environment(\.dismiss) var dismiss
   @State private var title = ""
@@ -21,7 +21,7 @@ struct NewBookView: View {
           TextField("Author", text: $author)
           TextField("Studio", text: $studio)
           Button("Create") {
-            let newBook = Book(title: title, author: author.isEmpty ? nil : author, studio: studio.isEmpty ? nil : studio)
+            let newBook = Media(title: title, author: author.isEmpty ? nil : author, studio: studio.isEmpty ? nil : studio)
             context.insert(newBook)
             dismiss()
           }
@@ -37,5 +37,5 @@ struct NewBookView: View {
 }
 
 #Preview {
-    NewBookView()
+    NewMediaView()
 }

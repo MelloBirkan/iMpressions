@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Book {
+class Media {
   var title: String
   var author: String?
   var studio: String?
