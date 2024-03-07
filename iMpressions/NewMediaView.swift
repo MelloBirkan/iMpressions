@@ -31,6 +31,13 @@ struct NewMediaView: View {
           .disabled(title.isEmpty || (author.isEmpty && studio.isEmpty))
           .navigationTitle("New Media")
           .navigationBarTitleDisplayMode(.inline)
+          .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+              Button("Cancel") {
+                dismiss()
+              }
+            }
+          }
         }
       }
     }

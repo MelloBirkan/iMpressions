@@ -5,7 +5,7 @@
 //  Created by Marcello Gonzatto Birkan on 06/03/24.
 //
 
-import Foundation
+import SwiftUI
 import SwiftData
 
 @Model
@@ -40,6 +40,24 @@ class Media {
     self.summary = summary
     self.rating = rating
     self.status = status
+  }
+  
+  var icon: Image {
+    switch status {
+    case .onShelf:
+      Image(systemName: "checkmark.diamond.fill")
+    case .inProgress:
+      Image(systemName: "book.fill")
+    case .completed:
+      Image(systemName: "books.vertical.fill")
+    }
+  }
+}
+
+enum TypeMedia: Codable, Identifiable, CaseIterable {
+  case game, book, movie
+  var id: Self {
+    self
   }
 }
 
